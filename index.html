@@ -88,7 +88,7 @@
             transition: all 0.3s ease-in-out;
         }
         .color-swatch:hover {
-            transform: translateY(-5px) scale(1.02);
+            transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
         .color-box {
@@ -309,6 +309,15 @@
 
         .pattern-image-container:hover::before {
             opacity: 1;
+        }
+
+        .list-disc {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -548,53 +557,157 @@
             </section>
 
             <section id="colors" class="mb-12 scroll-mt-16">
-                <h2 class="section-title">Colors</h2>
+                <h2 class="section-title">Color Palette</h2>
                 <div class="card">
-                    <h3 class="subsection-title mt-0">Primary Colors</h3>
-                    <p class="text-gray-700 mb-6 text-lg">These are the main colors. Use them as the dominant color palette for all internal and external visual presentations of the company.</p>
-                    <div class="flex flex-wrap gap-6 mb-8 justify-center md:justify-start">
-                        <div class="color-swatch">
+                    <!-- Primary Colors -->
+                    <h3 class="subsection-title mt-0">Primary Brand Colors</h3>
+                    <p class="text-gray-700 mb-6 text-lg">These are our core brand colors. Use them as the dominant color palette for all internal and external communications.</p>
+                    <div class="flex flex-wrap gap-6 mb-12 justify-center md:justify-start">
+                        <div class="color-swatch hover-lift">
                             <div class="color-box" style="background-color: #1c58dd;"></div>
-                            <strong class="text-gray-700">Flickr Blue</strong><br>
-                            <span class="text-xs text-gray-500">HEX: #1c58dd<br>R:28 G:88 B:221<br>C:78 M:66 Y:0 K:0</span>
+                            <strong class="text-gray-700">Scando Blue</strong><br>
+                            <span class="text-xs text-gray-500">
+                                HEX: #1c58dd<br>
+                                RGB: 28, 88, 221<br>
+                                CMYK: 78, 66, 0, 0<br>
+                                HSL: 221, 77%, 49%
+                            </span>
                         </div>
-                        <div class="color-swatch">
+                        <div class="color-swatch hover-lift">
                             <div class="color-box" style="background-color: #00f260;"></div>
-                            <strong class="text-gray-700">Spring Green</strong><br>
-                            <span class="text-xs text-gray-500">HEX: #00f260<br>R:0 G:242 B:96<br>C:65 M:0 Y:87 K:0</span>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #ffffff;"></div>
-                            <strong class="text-gray-700">Pure White</strong><br>
-                            <span class="text-xs text-gray-500">HEX: #ffffff<br>R:255 G:255 B:255<br>C:0 M:0 Y:0 K:0</span>
+                            <strong class="text-gray-700">Scando Green</strong><br>
+                            <span class="text-xs text-gray-500">
+                                HEX: #00f260<br>
+                                RGB: 0, 242, 96<br>
+                                CMYK: 65, 0, 87, 0<br>
+                                HSL: 142, 100%, 47%
+                            </span>
                         </div>
                     </div>
 
+                    <!-- Secondary Colors -->
                     <h3 class="subsection-title">Secondary Colors</h3>
-                    <p class="text-gray-700 mb-6 text-lg">These colors complement the primary palette and can be used for accents, backgrounds, or specific design elements.</p>
-                    <div class="flex flex-wrap gap-6 justify-center md:justify-start">
-                        <div class="color-swatch">
+                    <p class="text-gray-700 mb-6 text-lg">These colors complement our primary palette and should be used for accents, highlights, and supporting elements.</p>
+                    <div class="flex flex-wrap gap-6 mb-12 justify-center md:justify-start">
+                        <div class="color-swatch hover-lift">
                             <div class="color-box" style="background-color: #1677c4;"></div>
-                            <span class="text-xs text-gray-500">HEX: #1677c4<br>R:22 G:119 B:196<br>C:84 M:47 Y:0 K:0</span>
+                            <strong class="text-gray-700">Deep Blue</strong><br>
+                            <span class="text-xs text-gray-500">
+                                HEX: #1677c4<br>
+                                RGB: 22, 119, 196
+                            </span>
                         </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #1196ab;"></div>
-                            <span class="text-xs text-gray-500">HEX: #1196ab<br>R:17 G:150 B:171<br>C:78 M:20 Y:29 K:3</span>
+                        <div class="color-swatch hover-lift">
+                            <div class="color-box" style="background-color: #00d455;"></div>
+                            <strong class="text-gray-700">Mint Green</strong><br>
+                            <span class="text-xs text-gray-500">
+                                HEX: #00d455<br>
+                                RGB: 0, 212, 85
+                            </span>
                         </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #00f260;"></div>
-                            <strong class="text-gray-700">Spring Green</strong><br>
-                            <span class="text-xs text-gray-500">HEX: #00f260<br>R:0 G:242 B:96<br>C:65 M:0 Y:87 K:0</span>
+                    </div>
+
+                    <!-- UI Colors -->
+                    <h3 class="subsection-title">UI Colors</h3>
+                    <p class="text-gray-700 mb-6 text-lg">Specific colors for digital interfaces, ensuring accessibility and consistent user experience.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <!-- Interactive Elements -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-4">Interactive Elements</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="color-swatch hover-lift">
+                                    <div class="color-box" style="background-color: #1c58dd;"></div>
+                                    <strong class="text-gray-700">Primary Button</strong><br>
+                                    <span class="text-xs text-gray-500">HEX: #1c58dd</span>
+                                </div>
+                                <div class="color-swatch hover-lift">
+                                    <div class="color-box" style="background-color: #164fb8;"></div>
+                                    <strong class="text-gray-700">Hover State</strong><br>
+                                    <span class="text-xs text-gray-500">HEX: #164fb8</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="color-swatch">
+                        <!-- Status Colors -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-4">Status Indicators</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="color-swatch hover-lift">
+                                    <div class="color-box" style="background-color: #00f260;"></div>
+                                    <strong class="text-gray-700">Success</strong><br>
+                                    <span class="text-xs text-gray-500">HEX: #00f260</span>
+                                </div>
+                                <div class="color-swatch hover-lift">
+                                    <div class="color-box" style="background-color: #ff4444;"></div>
+                                    <strong class="text-gray-700">Error</strong><br>
+                                    <span class="text-xs text-gray-500">HEX: #ff4444</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extended Palette -->
+                    <h3 class="subsection-title">Extended Color Palette</h3>
+                    <p class="text-gray-700 mb-6 text-lg">Additional colors for various use cases in digital and print media.</p>
+                    
+                    <!-- Neutral Colors -->
+                    <h4 class="font-semibold text-gray-800 mb-4">Neutral Colors</h4>
+                    <div class="flex flex-wrap gap-6 mb-12 justify-center md:justify-start">
+                        <div class="color-swatch hover-lift">
                             <div class="color-box" style="background-color: #ffffff;"></div>
-                            <strong class="text-gray-700">Pure White</strong><br>
-                            <span class="text-xs text-gray-500">HEX: #ffffff<br>R:255 G:255 B:255<br>C:0 M:0 Y:0 K:0</span>
+                            <strong class="text-gray-700">White</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #ffffff</span>
                         </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #000000;"></div>
-                            <strong class="text-gray-700">Pure Black</strong><br>
-                            <span class="text-xs text-gray-500">HEX: #000000<br>R:0 G:0 B:0<br>C:91 M:79 Y:62 K:97</span>
+                        <div class="color-swatch hover-lift">
+                            <div class="color-box" style="background-color: #f8f9fa;"></div>
+                            <strong class="text-gray-700">Light Gray</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #f8f9fa</span>
+                        </div>
+                        <div class="color-swatch hover-lift">
+                            <div class="color-box" style="background-color: #6c757d;"></div>
+                            <strong class="text-gray-700">Medium Gray</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #6c757d</span>
+                        </div>
+                        <div class="color-swatch hover-lift">
+                            <div class="color-box" style="background-color: #212529;"></div>
+                            <strong class="text-gray-700">Dark Gray</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #212529</span>
+                        </div>
+                    </div>
+
+                    <!-- Usage Guidelines -->
+                    <h3 class="subsection-title">Usage Guidelines</h3>
+                    <div class="space-y-6">
+                        <!-- Digital Media -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">Digital Media Guidelines</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Use Scando Blue as the primary action color for buttons and interactive elements</li>
+                                <li>Maintain a minimum contrast ratio of 4.5:1 for text accessibility</li>
+                                <li>Use neutral colors for backgrounds and text content</li>
+                                <li>Limit accent colors to 10% of the overall design</li>
+                            </ul>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">Social Media Guidelines</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Use gradients of primary colors for post backgrounds</li>
+                                <li>Apply Scando Green for highlighting important content or CTAs</li>
+                                <li>Maintain brand recognition by using consistent color combinations</li>
+                                <li>Use white space effectively to make content stand out</li>
+                            </ul>
+                        </div>
+
+                        <!-- Print Media -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">Print Media Guidelines</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Use CMYK values for all print materials</li>
+                                <li>Ensure color accuracy by using Pantone color matching when possible</li>
+                                <li>Consider paper stock and finish when selecting colors</li>
+                                <li>Test print colors before final production</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
