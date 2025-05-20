@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scando Identity Usage Guidelines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1f2937; 
+        }
+        .font-ibm-plex {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+        .brand-blue { color: #1c58dd; }
+        .brand-green { color: #00f260; }
+
+        .section-title {
+            font-size: 2rem; 
+            font-weight: 700; 
+            color: #1c58dd; 
+            padding-bottom: 0.75rem; 
+            margin-bottom: 1.5rem; 
+            border-bottom: 3px solid #1c58dd; 
+        }
+        .subsection-title {
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            color: #374151; 
+            margin-top: 1.5rem; 
+            margin-bottom: 0.75rem; 
+        }
+        .card {
+            background-color: #ffffff; 
+            border-radius: 0.75rem; 
+            padding: 1.5rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+            margin-bottom: 1.5rem; 
+        }
+        .logo-showcase img {
+            max-width: 280px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .logo-thumbnail img {
+            height: 35px; 
+            width: auto;
+            display: inline-block;
+            margin-right: 0.5rem; 
+        }
+        .color-swatch {
+            width: 150px; 
+            padding: 1rem; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 0.5rem; 
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .color-swatch:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .color-box {
+            width: 100%;
+            height: 90px; 
+            margin-bottom: 0.75rem; 
+            border: 1px solid #d1d5db; 
+            border-radius: 0.375rem; 
+        }
+        .font-sample {
+            padding: 1rem; 
+            border: 1px dashed #9ca3af; 
+            margin-bottom: 1rem; 
+            border-radius: 0.5rem; 
+            font-size: 1.125rem; 
+            background-color: #f9fafb; 
+        }
+        .image-placeholder {
+            background-color: #f3f4f6; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280; 
+            border-radius: 0.5rem; 
+            border: 1px dashed #d1d5db; 
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.375rem; 
+        }
+        
+        .sidebar-nav-link {
+            @apply block px-4 py-2.5 rounded-md text-xs font-medium text-gray-600 hover:bg-blue-500 hover:text-white transition-colors;
+        }
+        .sidebar-nav-link.active {
+            @apply bg-blue-600 text-white;
+        }
+        
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none; 
+            z-index: 100;
+        }
+
+        .sidebar {
+            width: 280px; 
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 767px) { 
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content.sidebar-open {
+                
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100"> 
+
+    <button type="button" id="mobile-menu-button" class="md:hidden fixed top-4 left-4 z-[60] bg-white p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 shadow-md" aria-controls="sidebar" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+
+    <nav id="sidebar" class="sidebar fixed top-0 left-0 h-full bg-white shadow-lg z-50 overflow-y-auto p-6 md:translate-x-0">
+        <div class="flex flex-col h-full">
+            <a href="#" class="flex-shrink-0 mb-6 text-center">
+                <img class="h-12 w-auto mx-auto" src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Icon" onerror="this.onerror=null;this.src='https://placehold.co/48x48/eee/ccc?text=Icon';this.alt='Error loading icon';">
+                <span class="block text-lg font-semibold brand-blue mt-2">Scando Guidelines</span>
+            </a>
+            <div id="nav-links" class="flex flex-col space-y-1.5">
+                <a href="#introduction" class="sidebar-nav-link">Introduction</a>
+                <a href="#logo-mark" class="sidebar-nav-link">Logo Mark</a>
+                <a href="#construction-clear-space" class="sidebar-nav-link">Clear Space</a>
+                <a href="#primary-logo" class="sidebar-nav-link">Primary Logo</a>
+                <a href="#secondary-logo" class="sidebar-nav-link">Secondary Logo</a>
+                <a href="#monochrome-logo" class="sidebar-nav-link">Monochrome Logo</a>
+                <a href="#minimum-size" class="sidebar-nav-link">Minimum Size</a>
+                <a href="#logo-placement" class="sidebar-nav-link">Logo Placement</a>
+                <a href="#colors" class="sidebar-nav-link">Color Palette</a>
+                <a href="#patterns" class="sidebar-nav-link">Brand Patterns</a>
+                <a href="#typography" class="sidebar-nav-link">Typography</a>
+                <a href="#usage-with-image" class="sidebar-nav-link">Logo on Images</a>
+                <a href="#stationery-examples" class="sidebar-nav-link">Stationery</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-content-area" class="main-content md:ml-[280px] transition-all duration-300 ease-in-out">
+        <div class="container mx-auto bg-white p-6 md:p-10 rounded-lg shadow-xl my-4 md:my-8"> 
+
+            <header class="text-center mb-16 pt-8"> 
+                <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" alt="Scando Primary Logo" class="mx-auto mb-6 h-24 md:h-32" onerror="this.onerror=null;this.src='https://placehold.co/200x100/eee/ccc?text=Logo+Error';this.alt='Error loading Scando logo';">
+                <h1 class="text-5xl md:text-6xl font-bold brand-blue tracking-tight">Identity GUIDELINES</h1>
+                <p class="text-gray-500 mt-3 text-lg">ALL RIGHTS RESERVED. COPYRIGHT &copy; 2022 Scando</p>
+            </header>
+
+            <section id="introduction" class="mb-12 scroll-mt-16"> 
+                <h2 class="section-title">Introduction</h2>
+                <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
+                    <p>These branding guidelines are designed to ensure a consistent look and a consistent tone in all its communications.</p>
+                    <p>The Scando brand communicates excellence and usually serves as the first impression of Scando with any audience in person or online. Each has a specific role to play, but the real magic happens when they're all used together.</p>
+                    <p>The following pages will help you understand our brand, what it stands for and how to express it in the best possible way.</p>
+                </div>
+            </section>
+
+            <section id="logo-mark" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Logo Mark</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">The primary visual expression that we use to identify ourselves.</p>
+                    <p class="text-gray-700 mb-6 text-lg">This means that we need to be careful to use it correctly and to do so consistently.</p>
+                    <div class="logo-showcase bg-gray-50 p-6 rounded-lg inline-block border border-gray-200">
+                        <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" alt="Scando Logo Mark" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading Scando logo mark';">
+                    </div>
+                </div>
+            </section>
+
+            <section id="construction-clear-space" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Construction & Clear Space</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">Clear space prevents type, imagery, or other graphic elements from interfering with the legibility of our logo.</p>
+                    <p class="text-gray-700 mb-4 text-lg">No graphic elements should encroach the border around the logomark. Maintain 1X clear space around the logo, where 'X' is a proportional unit derived from the logo itself.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <p class="text-md text-gray-600 mb-2">Visual representation of clear space (conceptual):</p>
+                        <img src="https://placehold.co/600x250/E2E8F0/4A5568?text=Logo+with+Clear+Space+Grid+(Conceptual)" alt="Scando Logo with clear space indication" class="border border-dashed border-gray-400 rounded-md">
+                        <p class="text-sm text-gray-500 mt-2">The image above is a conceptual placeholder illustrating the principle of maintaining clear space around the logo elements.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="primary-logo" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Primary Logo</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">The Scando logo used on an application will often depend on the background and production method.</p>
+                    <p class="text-gray-700 mb-6 text-lg">When using the logo on a white or black background, you can use the full-color version of the logo.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="subsection-title">Full color on white</h3>
+                            <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" alt="Primary Logo for white background" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading primary logo';">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">Full color on black</h3>
+                            <div class="logo-showcase bg-black p-6 rounded-lg flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/p6h86Bkh/Primary-Logo-for-black-background.png" alt="Primary Logo for black background" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading primary logo';">
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="subsection-title mt-8">Scando Icon</h3>
+                    <p class="text-gray-700 mb-3 text-lg">This is the isolated mark part of the logo, suitable for use in constrained spaces or as a favicon.</p>
+                    <div class="logo-showcase bg-gray-100 p-6 rounded-lg inline-block border border-gray-200 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 flex items-center justify-center">
+                        <img src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Icon" class="max-h-full max-w-full" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Icon+Error';this.alt='Error loading Scando icon';">
+                    </div>
+                </div>
+            </section>
+
+            <section id="secondary-logo" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Secondary Logo</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">This version of the logo should be used where the primary logo cannot fit or the background doesn't support many colors.</p>
+                    <p class="text-gray-700 mb-6 text-lg">You can also reverse the colors with the background color.</p>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-10">
+                        <div>
+                            <h3 class="subsection-title">Black for bright background</h3>
+                            <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/VcZ6QrtD/Secondary-Logo-black-for-bright-background.png" alt="Secondary Logo black for bright background" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">White for dark background</h3>
+                            <div class="logo-showcase bg-gray-800 p-6 rounded-lg flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/DPxpsQG6/Secondary-Logo-white-for-dark-background.png" alt="Secondary Logo white for dark background" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">Blue for white background</h3>
+                            <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/FbbR7PXV/Secondary-Logo-blue-for-white-background.png" alt="Secondary Logo blue for white background" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">Green for white background</h3>
+                            <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/hFMygsxt/Secondary-Logo-green-for-white-background.png" alt="Secondary Logo green for white background" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="subsection-title mt-10">Secondary Icons</h3>
+                    <p class="text-gray-700 mb-4 text-lg">Isolated icons for secondary use cases, maintaining brand consistency.</p>
+                    <div class="flex flex-wrap gap-6">
+                        <div class="text-center">
+                            <p class="text-md text-gray-600 mb-2">Secondary Icon Blue:</p>
+                            <div class="logo-showcase bg-gray-100 p-4 rounded-lg inline-block border border-gray-200 w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 flex items-center justify-center">
+                                <img src="https://i.ibb.co/XZZJTnLX/Secondary-Icon-blue.png" alt="Secondary Icon blue" class="max-h-full max-w-full" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Icon+Error';this.alt='Error loading secondary icon';">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-md text-gray-600 mb-2">Secondary Icon Green:</p>
+                            <div class="logo-showcase bg-gray-100 p-4 rounded-lg inline-block border border-gray-200 w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 flex items-center justify-center">
+                                <img src="https://i.ibb.co/7tsWdmWz/Secondary-Icon-green.png" alt="Secondary Icon green" class="max-h-full max-w-full" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Icon+Error';this.alt='Error loading secondary icon';">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="monochrome-logo" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Monochrome Logo</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-6 text-lg">These versions of the logo should be used in signatures, small sizes, or when color printing is not available. The provided secondary logos in black and white serve as examples.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="subsection-title">Monochrome Black (on light)</h3>
+                            <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/VcZ6QrtD/Secondary-Logo-black-for-bright-background.png" alt="Monochrome Logo Black" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading monochrome logo';">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">Monochrome White (on dark)</h3>
+                            <div class="logo-showcase bg-gray-800 p-6 rounded-lg flex items-center justify-center h-48">
+                                <img src="https://i.ibb.co/DPxpsQG6/Secondary-Logo-white-for-dark-background.png" alt="Monochrome Logo White" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading monochrome logo';">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="minimum-size" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Minimum Size</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-4 text-lg">35px is the minimum height size of the Scando Logo to ensure legibility.</p>
+                    <div class="logo-thumbnail bg-gray-50 p-3 rounded-lg inline-flex items-center border border-gray-200 shadow-sm">
+                        <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" alt="Scando Logo 35px height" onerror="this.onerror=null;this.src='https://placehold.co/100x35/eee/ccc?text=Logo+Error';this.alt='Error loading small logo';">
+                        <span class="ml-3 text-md text-gray-700 font-medium">Scando 35px height</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">(The image above is styled to 35px height for demonstration purposes.)</p>
+                </div>
+            </section>
+
+            <section id="logo-placement" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Logo Placement</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">Logo placements are typically aligned to corners or centered, ensuring adequate clear space.</p>
+                    <p class="text-gray-700 mb-6 text-lg">Always ensure the logo is clearly visible and maintains its integrity without being overcrowded by other elements. Placement should be consistent across different materials.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3 text-center">Above are conceptual placements illustrating common alignment strategies.</p>
+                </div>
+            </section>
+
+            <section id="colors" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Colors</h2>
+                <div class="card">
+                    <h3 class="subsection-title mt-0">Primary Colors</h3>
+                    <p class="text-gray-700 mb-6 text-lg">These are the main colors. Use them as the dominant color palette for all internal and external visual presentations of the company.</p>
+                    <div class="flex flex-wrap gap-6 mb-8 justify-center md:justify-start">
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #1c58dd;"></div>
+                            <strong class="text-gray-700">Flickr Blue</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #1c58dd<br>R:28 G:88 B:221<br>C:78 M:66 Y:0 K:0</span>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #00f260;"></div>
+                            <strong class="text-gray-700">Spring Green</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #00f260<br>R:0 G:242 B:96<br>C:65 M:0 Y:87 K:0</span>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #ffffff;"></div>
+                            <strong class="text-gray-700">Pure White</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #ffffff<br>R:255 G:255 B:255<br>C:0 M:0 Y:0 K:0</span>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title">Secondary Colors</h3>
+                    <p class="text-gray-700 mb-6 text-lg">These colors complement the primary palette and can be used for accents, backgrounds, or specific design elements.</p>
+                    <div class="flex flex-wrap gap-6 justify-center md:justify-start">
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #1677c4;"></div>
+                            <span class="text-xs text-gray-500">HEX: #1677c4<br>R:22 G:119 B:196<br>C:84 M:47 Y:0 K:0</span>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #1196ab;"></div>
+                            <span class="text-xs text-gray-500">HEX: #1196ab<br>R:17 G:150 B:171<br>C:78 M:20 Y:29 K:3</span>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #00f260;"></div>
+                            <strong class="text-gray-700">Spring Green</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #00f260<br>R:0 G:242 B:96<br>C:65 M:0 Y:87 K:0</span>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #ffffff;"></div>
+                            <strong class="text-gray-700">Pure White</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #ffffff<br>R:255 G:255 B:255<br>C:0 M:0 Y:0 K:0</span>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background-color: #000000;"></div>
+                            <strong class="text-gray-700">Pure Black</strong><br>
+                            <span class="text-xs text-gray-500">HEX: #000000<br>R:0 G:0 B:0<br>C:91 M:79 Y:62 K:97</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="patterns" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Patterns</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">Visual patterns can be created using the Scando icon mark, or text-based patterns using the brand name.</p>
+                    <p class="text-gray-700 mb-6 text-lg">These patterns can be used as background elements or decorative features in brand communications, ensuring they do not overpower the main content or logo.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="subsection-title">Icon Mark Pattern (Conceptual)</h3>
+                            <div class="image-placeholder h-72 p-6 text-center">
+                                <p class="mb-3 text-gray-600">A repeating diagonal pattern of the Scando logo's graphic mark (e.g., white on blue background) can be used.</p>
+                                <img src="https://placehold.co/300x200/1C58DD/FFFFFF?text=Repeating+Icon+Pattern" alt="Icon Mark Pattern Placeholder" class="mx-auto">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">Text Pattern (Conceptual)</h3>
+                            <div class="bg-gray-50 p-6 rounded-lg h-72 overflow-hidden border border-gray-200">
+                                <p class="text-gray-600 text-md break-all leading-relaxed">
+                                    Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando Scando
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="typography" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Typography</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-6 text-lg">Consistent typography is key to brand recognition and readability.</p>
+
+                    <h3 class="subsection-title mt-0">English Typeface: Montserrat</h3>
+                    <p class="text-gray-700 mb-6 text-lg">This font is used for Presentations, media press, Branding, Packaging, Advertisements, Web Apps & Mobile Platforms.</p>
+                    <div class="mb-8">
+                        <h4 class="font-semibold text-gray-800 mb-2 text-xl">Headline font: Montserrat (Bold)</h4>
+                        <div class="font-sample font-bold">
+                            Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>
+                            0123456789<br>
+                            @!#$%^&+/-
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h4 class="font-semibold text-gray-800 mb-2 text-xl">Sub font: Montserrat (SemiBold)</h4>
+                        <div class="font-sample font-semibold">
+                            Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>
+                            0123456789<br>
+                            @!#$%^&+/-
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2 text-xl">Body font: Montserrat (Regular)</h4>
+                        <div class="font-sample font-normal"> 
+                            Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>
+                            0123456789<br>
+                            @!#$%^&+/-
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title mt-10">Arabic Typeface: IBM Plex Sans Arabic</h3>
+                    <p class="text-gray-700 mb-6 text-lg">This font is used for Presentations, media press, Branding, Packaging, Advertisements, Web Apps & Mobile Platforms in Arabic language contexts.</p>
+                    <div class="mb-8">
+                        <h4 class="font-semibold text-gray-800 mb-2 text-xl">Headline font: IBM Plex (Bold)</h4>
+                        <div class="font-sample font-ibm-plex font-bold text-right" dir="rtl">
+                            أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي<br>
+                            ٠١٢٣٤٥٦٧٨٩<br>
+                            @!#$%^&+/-
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h4 class="font-semibold text-gray-800 mb-2 text-xl">Sub font: IBM Plex (SemiBold)</h4>
+                        <div class="font-sample font-ibm-plex font-semibold text-right" dir="rtl">
+                            أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي<br>
+                            ٠١٢٣٤٥٦٧٨٩<br>
+                            @!#$%^&+/-
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2 text-xl">Body font: IBM Plex (Regular)</h4>
+                        <div class="font-sample font-ibm-plex font-normal text-right" dir="rtl"> 
+                            أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي<br>
+                            ٠١٢٣٤٥٦٧٨٩<br>
+                            @!#$%^&+/-
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="usage-with-image" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Usage with Image</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-6 text-lg">Different styles, but only place the logo against images that create enough contrast to make the logo clearly visible to the eye.</p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="relative group">
+                            <img src="https://placehold.co/400x280/333333/FFFFFF?text=Dark+Image+Example" alt="Dark Image Background Example" class="rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute inset-0 flex items-center justify-center p-4 bg-black bg-opacity-10 group-hover:bg-opacity-0 transition-opacity duration-300">
+                                <img src="https://i.ibb.co/DPxpsQG6/Secondary-Logo-white-for-dark-background.png" alt="Scando Logo on Dark Image" class="h-14 border-2 border-white/50 p-1 rounded-sm shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/100x50/eee/ccc?text=Logo+Error';this.alt='Error loading logo';">
+                            </div>
+                            <p class="text-center text-sm text-gray-600 mt-2 font-medium">White logo on dark image</p>
+                        </div>
+                        <div class="relative group">
+                            <img src="https://placehold.co/400x280/E0E0E0/000000?text=Light+Image+Example" alt="Light Image Background Example" class="rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute inset-0 flex items-center justify-center p-4 bg-white bg-opacity-10 group-hover:bg-opacity-0 transition-opacity duration-300">
+                                <img src="https://i.ibb.co/VcZ6QrtD/Secondary-Logo-black-for-bright-background.png" alt="Scando Logo on Light Image" class="h-14 border-2 border-black/50 p-1 rounded-sm shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/100x50/eee/ccc?text=Logo+Error';this.alt='Error loading logo';">
+                            </div>
+                            <p class="text-center text-sm text-gray-600 mt-2 font-medium">Black logo on light image</p>
+                        </div>
+                        <div class="relative group">
+                            <img src="https://placehold.co/400x280/A0A0A0/FFFFFF?text=Medium+Contrast+Image" alt="Medium Contrast Image Example" class="rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute inset-0 flex items-center justify-center p-4 bg-gray-500 bg-opacity-10 group-hover:bg-opacity-0 transition-opacity duration-300">
+                                <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" alt="Scando Logo on Medium Contrast Image" class="h-14 border-2 border-black/30 p-1 rounded-sm shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/100x50/eee/ccc?text=Logo+Error';this.alt='Error loading logo';">
+                            </div>
+                            <p class="text-center text-sm text-gray-600 mt-2 font-medium">Full color logo on sufficient contrast</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stationery-examples" class="mb-12 scroll-mt-16">
+                <h2 class="section-title">Stationery & Examples</h2>
+                <div class="card">
+                    <p class="text-gray-700 mb-3 text-lg">Stationery includes items like business cards, letterheads, and envelopes, showcasing an elegant look in bright white.</p>
+                    <p class="text-gray-700 mb-6 text-lg">These examples demonstrate the practical application of the Scando logo and brand identity on various corporate materials. Consistent application reinforces brand recognition.</p>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <img src="https://placehold.co/800x600/F9FAFB/4B5563?text=Stationery+Mockup+(Conceptual)" alt="Stationery Examples" class="rounded-lg shadow-lg mx-auto">
+                        <p class="text-sm text-gray-500 mt-3 text-center">Conceptual placeholder for stationery mockups (business cards, letterhead, envelope).</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="text-center mt-16 py-10 border-t border-gray-300">
+                <p class="text-gray-500 text-md">ALL RIGHTS RESERVED. COPYRIGHT &copy; 2022 Scando</p>
+            </footer>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" title="Go to top" class="p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mainContentArea = document.getElementById('main-content-area');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            sidebar.classList.toggle('open');
+            mainContentArea.classList.toggle('sidebar-open'); 
+            mobileMenuButton.querySelectorAll('svg').forEach(icon => icon.classList.toggle('hidden'));
+        });
+        
+        const navLinks = document.querySelectorAll('#nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { 
+                    sidebar.classList.remove('open');
+                    mainContentArea.classList.remove('sidebar-open');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButton.querySelectorAll('svg')[0].classList.remove('hidden'); 
+                    mobileMenuButton.querySelectorAll('svg')[1].classList.add('hidden');    
+                }
+            });
+        });
+        
+        const sections = document.querySelectorAll('section[id]');
+        const scrollOffset = 80; 
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - scrollOffset) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        const logoPlacementGrid = document.querySelector('#logo-placement .grid');
+        if (logoPlacementGrid && !logoPlacementGrid.hasChildNodes()) { 
+            let placementHTML = '';
+            const alignments = [
+                'items-start justify-start', 'items-start justify-center', 'items-start justify-end',
+                'items-center justify-start', 'items-center justify-center', 'items-center justify-end',
+                'items-end justify-start', 'items-end justify-center', 'items-end justify-end'
+            ];
+            for (let i = 0; i < 9; i++) {
+                placementHTML += `
+                    <div class="image-placeholder h-52 flex ${alignments[i % alignments.length]} p-4">
+                        <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" 
+                             alt="Logo Placement Example ${i+1}" 
+                             class="h-10 opacity-75" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x40/eee/ccc?text=Error'; this.alt='Error';">
+                    </div>`;
+            }
+            logoPlacementGrid.innerHTML = placementHTML;
+        }
+    </script>
+</body>
+</html>
