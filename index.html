@@ -45,13 +45,13 @@
             background-color: #00f260;
         }
         .subsection-title {
-            font-size: 1.75rem; 
-            font-weight: 600; 
-            color: #2d3748; 
-            margin-top: 2rem; 
-            margin-bottom: 1rem; 
-            padding-left: 1rem;
-            border-left: 4px solid #1c58dd;
+            font-size: 1.25rem; /* Reduced from 1.75rem */
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1rem; /* Reduced from 2rem */
+            margin-bottom: 0.5rem; /* Reduced from 1rem */
+            padding-left: 0.75rem;
+            border-left: 3px solid #1c58dd;
         }
         .card {
             background-color: #ffffff;
@@ -410,14 +410,13 @@
                 </div>
             </section>
 
+            <!-- Primary Logo Section -->
             <section id="primary-logo" class="mb-12 scroll-mt-16">
                 <h2 class="section-title">Primary Logo</h2>
                 <div class="card">
-                    <p class="text-gray-700 mb-3 text-lg">The Scando logo used on an application will often depend on the background and production method.</p>
-                    <p class="text-gray-700 mb-6 text-lg">When using the logo on a white or black background, you can use the full-color version of the logo.</p>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="text-center">
-                            <h3 class="subsection-title">Full color on white</h3>
+                            <span class="text-sm text-gray-500 mb-2">White Background</span>
                             <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-32 sm:h-40 md:h-48">
                                 <a href="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
                                     <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" alt="Primary Logo for white background" class="asset-image" onerror="this.onerror=null;this.src='https://placehold.co/220x80/eee/ccc?text=Logo+Error';this.alt='Error loading primary logo';">
@@ -425,21 +424,12 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="subsection-title">Full color on black</h3>
+                            <span class="text-sm text-gray-500 mb-2">Dark Background</span>
                             <div class="logo-showcase bg-black p-6 rounded-lg flex items-center justify-center h-32 sm:h-40 md:h-48">
                                 <a href="https://i.ibb.co/p6h86Bkh/Primary-Logo-for-black-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
                                     <img src="https://i.ibb.co/p6h86Bkh/Primary-Logo-for-black-background.png" alt="Primary Logo for black background" class="asset-image" onerror="this.onerror=null;this.src='https://placehold.co/220x80/eee/ccc?text=Logo+Error';this.alt='Error loading primary logo';">
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <h3 class="subsection-title">Scando Icon</h3>
-                        <p class="text-gray-700 mb-3 text-lg">This is the isolated mark part of the logo, suitable for use in constrained spaces or as a favicon.</p>
-                        <div class="logo-showcase icon-only bg-gray-100 p-6 rounded-lg inline-block border border-gray-200 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 flex items-center justify-center">
-                            <a href="https://i.ibb.co/8DprynwC/scandoicon.png" target="_blank" rel="noopener noreferrer" class="asset-link">
-                                <img src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Icon" class="max-h-full max-w-full" onerror="this.onerror=null;this.src='https://placehold.co/60x60/eee/ccc?text=Icon+Error';this.alt='Error loading Scando icon';">
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -448,11 +438,9 @@
             <section id="secondary-logo" class="mb-12 scroll-mt-16">
                 <h2 class="section-title">Secondary Logo</h2>
                 <div class="card">
-                    <p class="text-gray-700 mb-3 text-lg">This version of the logo should be used where the primary logo cannot fit or the background doesn't support many colors.</p>
-                    <p class="text-gray-700 mb-6 text-lg">You can also reverse the colors with the background color.</p>
                     <div class="grid md:grid-cols-2 gap-x-8 gap-y-10">
                         <div class="text-center">
-                            <h3 class="subsection-title">Black for bright background</h3>
+                            <span class="text-sm text-gray-500 mb-2">Black</span>
                             <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
                                 <a href="https://i.ibb.co/VcZ6QrtD/Secondary-Logo-black-for-bright-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
                                     <img src="https://i.ibb.co/VcZ6QrtD/Secondary-Logo-black-for-bright-background.png" alt="Secondary Logo black for bright background" class="asset-image" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
@@ -460,7 +448,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="subsection-title">White for dark background</h3>
+                            <span class="text-sm text-gray-500 mb-2">White</span>
                             <div class="logo-showcase bg-gray-800 p-6 rounded-lg flex items-center justify-center h-48">
                                 <a href="https://i.ibb.co/DPxpsQG6/Secondary-Logo-white-for-dark-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
                                     <img src="https://i.ibb.co/DPxpsQG6/Secondary-Logo-white-for-dark-background.png" alt="Secondary Logo white for dark background" class="asset-image" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
@@ -468,7 +456,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="subsection-title">Blue for white background</h3>
+                            <span class="text-sm text-gray-500 mb-2">Blue</span>
                             <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
                                 <a href="https://i.ibb.co/FbbR7PXV/Secondary-Logo-blue-for-white-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
                                     <img src="https://i.ibb.co/FbbR7PXV/Secondary-Logo-blue-for-white-background.png" alt="Secondary Logo blue for white background" class="asset-image" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
@@ -476,7 +464,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="subsection-title">Green for white background</h3>
+                            <span class="text-sm text-gray-500 mb-2">Green</span>
                             <div class="logo-showcase bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center h-48">
                                 <a href="https://i.ibb.co/hFMygsxt/Secondary-Logo-green-for-white-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
                                     <img src="https://i.ibb.co/hFMygsxt/Secondary-Logo-green-for-white-background.png" alt="Secondary Logo green for white background" class="asset-image" onerror="this.onerror=null;this.src='https://placehold.co/280x150/eee/ccc?text=Logo+Error';this.alt='Error loading secondary logo';">
@@ -1061,6 +1049,7 @@
     </button>
 
     <script>
+        // Mobile menu functionality
         const sidebar = document.getElementById('sidebar');
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mainContentArea = document.getElementById('main-content-area');
@@ -1069,103 +1058,78 @@
             const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
             mobileMenuButton.setAttribute('aria-expanded', !expanded);
             sidebar.classList.toggle('open');
-            mainContentArea.classList.toggle('sidebar-open'); 
+            mainContentArea.classList.toggle('sidebar-open');
             mobileMenuButton.querySelectorAll('svg').forEach(icon => icon.classList.toggle('hidden'));
         });
         
+        // Navigation handling
         const navLinks = document.querySelectorAll('#nav-links a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 768) { 
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                if (window.innerWidth < 768) {
                     sidebar.classList.remove('open');
                     mainContentArea.classList.remove('sidebar-open');
                     mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    mobileMenuButton.querySelectorAll('svg')[0].classList.remove('hidden'); 
-                    mobileMenuButton.querySelectorAll('svg')[1].classList.add('hidden');    
                 }
             });
         });
         
+        // Scroll spy
         const sections = document.querySelectorAll('section[id]');
-        const scrollOffset = 80; 
+        const scrollOffset = 80;
 
-        window.addEventListener('scroll', () => {
-            let current = '';
+        function onScroll() {
+            const scrollPosition = window.scrollY + scrollOffset;
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - scrollOffset) { 
-                    current = section.getAttribute('id');
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        }); else {
-              scrollToTopBtn.style.display = "none";
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {ollToTopBtn.addEventListener('click', function() {
-                scrollToTopBtn.style.display = "block";    window.scrollTo({top: 0, behavior: 'smooth'});
+            // Scroll to top button visibility
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
             }
-        };
-        scrollToTopBtn.addEventListener('click', function() {ocument.querySelector('#logo-placement .grid');
-            window.scrollTo({top: 0, behavior: 'smooth'}); !logoPlacementGrid.hasChildNodes()) { 
-        });
-        
-        const logoPlacementGrid = document.querySelector('#logo-placement .grid');y-end',
-        if (logoPlacementGrid && !logoPlacementGrid.hasChildNodes()) {   'items-center justify-start', 'items-center justify-center', 'items-center justify-end',
-            let placementHTML = '';tems-end justify-end'
-            const alignments = [
-                'items-start justify-start', 'items-start justify-center', 'items-start justify-end',) { // Show 3 conceptual placements
-                'items-center justify-start', 'items-center justify-center', 'items-center justify-end',
-                'items-end justify-start', 'items-end justify-center', 'items-end justify-end'
-            ];
-            for (let i = 0; i < 3; i++) { // Show 3 conceptual placementso-for-white-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
-                 if (i === 0) { CXMYXd/Primary-Logo-for-white-background.png" 
-                    placementHTML += `
-                        <div class="image-placeholder h-52 flex ${alignments[i % alignments.length]} p-4">
-                           <a href="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" target="_blank" rel="noopener noreferrer" class="asset-link">
-                                <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" 
-                                     alt="Logo Placement Example ${i+1}" 
-                                     class="h-10 opacity-75" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/100x40/eee/ccc?text=Error'; this.alt='Error';">
-                            </a>
-                        </div>`;
-                } else {
-                    placementHTML += `
-                        <div class="image-placeholder h-52 flex ${alignments[i % alignments.length]} p-4 opacity-50"> 
-                             <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" 
-                                 alt="Conceptual Logo Placement ${i+1}" 
-                                 class="h-10 opacity-75" 
-                                 onerror="this.onerror=null; this.src='https://placehold.co/100x40/eee/ccc?text=Error'; this.alt='Error';">
-                            <span class="text-gray-400 text-xs absolute bottom-2">Conceptual Placement</span>
-                        </div>`;
-                }
-            }</html></body>    </script>        }            logoPlacementGrid.innerHTML = placementHTML;            }                 }                    `;                        </div>                            <span class="text-gray-400">Conceptual Placement</span>                        <div class="image-placeholder h-52 flex ${alignments[i % alignments.length]} p-4 opacity-50">                    placementHTML += `                 } else {                    `;                        </div>                            </a>                                     onerror="this.onerror=null; this.src='https://placehold.co/100x40/eee/ccc?text=Error'; this.alt='Error';">                                     class="h-10 opacity-75"                             </a>
-
-
-
-
-
-
-</html></body>    </script>        }            logoPlacementGrid.innerHTML = placementHTML;                        </div>`;
-                } else {
-                    placementHTML += `
-                        <div class="image-placeholder h-52 flex ${alignments[i % alignments.length]} p-4 opacity-50"> 
-                             <img src="https://i.ibb.co/wrCXMYXd/Primary-Logo-for-white-background.png" 
-                                 alt="Conceptual Logo Placement ${i+1}" 
-                                 class="h-10 opacity-75" 
-                                 onerror="this.onerror=null; this.src='https://placehold.co/100x40/eee/ccc?text=Error'; this.alt='Error';">
-                            <span class="text-gray-400 text-xs absolute bottom-2">Conceptual Placement</span>
-                        </div>`;
-                }
-            }
-            logoPlacementGrid.innerHTML = placementHTML;
         }
+
+        window.addEventListener('scroll', onScroll);
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
